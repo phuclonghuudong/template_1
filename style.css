@@ -379,12 +379,152 @@ body {
 /* ===================== */
 .card {
      width: 100%;
-     height: 1467px;
+     /* height: 1467px; */
      background-color: var(--bg-color-second);
+     display: flex;
+     padding: 80px 0px;
+     flex-direction: column;
+     align-items: center;
+     gap: 30px;
+     align-self: stretch;
+}
+.card-body {
+     height: 100%;
+     display: grid;
+     grid-template-columns: 330px 330px 330px;
+     width: 1050px;
+     justify-content: space-between;
+     align-items: flex-start;
+     gap: 30px;
+}
+.card-product {
+     display: flex;
+     width: 330px;
+     height: 469px;
+     flex-direction: column;
+     align-items: center;
+     flex: 1 0 0;
+     border-radius: 20px;
+     background: var(--Background, #2b2b2b);
+}
+.image-div {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 10px;
+     align-self: stretch;
+     height: 295px;
+     align-self: stretch;
+     border-radius: 20px 20px 0px 0px;
+}
+.image-div img {
+     width: 100%;
+     height: 295px;
+     border-radius: 20px 20px 0px 0px;
+     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.card-info {
+     display: flex;
+     padding: 20px 30px 25px 30px;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 25px;
+}
+.card-info-artist {
+     width: 270px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 5px;
+}
+.text-card-info {
+     color: var(--White, #fff);
+     font-size: 22px;
+     font-style: normal;
+     font-weight: 600;
+     line-height: 140%; /* 30.8px */
+     text-transform: capitalize;
+}
+.card-artst-info {
+     display: flex;
+     align-items: flex-start;
+     gap: 12px;
+}
+.card-artst-info img {
+     display: flex;
+     align-items: flex-start;
+     gap: 10px;
+}
+.card-artst-info img {
+     display: flex;
+     width: 24px;
+     height: 24px;
+     justify-content: center;
+     align-items: center;
+     border-radius: 120px;
+     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.card-artst-info p {
+     color: var(--White, #fff);
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%; /* 22.4px */
+}
+.card-additional-info-artist {
+     display: flex;
+     align-items: flex-start;
+     width: 270px;
+}
+.price {
+     display: flex;
+     padding-right: 0px;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 8px;
+     flex: 1 0 0;
+}
+.title-price {
+     color: #858584;
+     font-size: 12px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 110%; /* 13.2px */
+}
+.price-product {
+     color: var(--White, #fff);
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%; /* 22.4px */
+}
+.highest {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-end;
+     gap: 8px;
+     flex: 1 0 0;
+}
+.title-highest {
+     color: #858584;
+     text-align: right;
+     font-size: 12px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 110%; /* 13.2px */
+}
+.highest-product {
+     color: var(--White, #fff);
+     text-align: right;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%; /* 22.4px */
 }
 /* ===================== */
 .footer {
-     max-width: 100%;
+     width: 100%;
      display: flex;
      padding: 40px 195px;
      flex-direction: column;
@@ -438,6 +578,9 @@ body {
      flex-direction: column;
      align-items: flex-start;
      gap: 25px;
+}
+.icon:hover {
+     color: var(--bg-button);
 }
 .footer-title-logo {
      color: #fff;
@@ -658,6 +801,18 @@ body {
      .border-footer {
           width: 690px;
      }
+     .card {
+          width: 100%;
+     }
+     .card-body {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 330px 330px;
+          width: 690px;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 30px;
+     }
 }
 /* tablet */
 @media (min-width: 376px) and (max-width: 834px) {
@@ -749,9 +904,21 @@ body {
      .border-footer {
           width: 690px;
      }
+     .card {
+          width: 100%;
+     }
+     .card-body {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 330px 330px;
+          width: 690px;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 30px;
+     }
 }
 /* mobile */
-@media (max-width: 375px) {
+@media all and (max-width: 375px) {
      .header-content {
           padding: 15px 30px;
      }
@@ -907,23 +1074,24 @@ body {
           flex-direction: column;
           align-items: center;
           gap: 30px;
-          align-self: stretch;
+          width: 100%;
      }
      .footer-info {
           display: flex;
-          width: 315px;
+          max-width: 315px;
           flex-direction: column;
           align-items: flex-start;
           gap: 30px;
      }
-     .footer-frame {
-          width: 315px;
+     .footer-frame,
+     .footer-info-marketplate {
+          max-width: 315px;
      }
      .border-footer {
-          width: 315px;
+          max-width: 315px;
      }
      .footer-info-subscribe {
-          width: 315px;
+          max-width: 315px;
      }
      .footer-subscribe-form-input {
           width: 315px;
@@ -955,6 +1123,25 @@ body {
           width: 315px;
           margin-left: -20px;
           padding-right: 20px;
+     }
+
+     .card {
+          /* width: 375px; */
+          height: 100%;
+     }
+     .card-body {
+          display: grid;
+          width: 315px;
+          align-items: center;
+          gap: 30px;
+          grid-template-columns: 275px;
+     }
+     .card-product {
+          width: 315px;
+          height: 100%;
+     }
+     .image-div {
+          width: 100%;
      }
 }
 
